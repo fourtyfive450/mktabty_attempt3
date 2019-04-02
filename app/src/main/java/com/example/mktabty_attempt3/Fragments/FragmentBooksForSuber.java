@@ -1,0 +1,134 @@
+package com.example.mktabty_attempt3.Fragments;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import com.example.mktabty_attempt3.Adapters.BooksForSubersAdapter;
+import com.example.mktabty_attempt3.Cabs.BooksForSubersCaps;
+import com.example.mktabty_attempt3.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
+
+
+public class FragmentBooksForSuber extends Fragment {
+
+    public FragmentBooksForSuber() {
+        // Required empty public constructor
+    }
+
+
+    public static FragmentBooksForSuber newInstance(String param1, String param2) {
+        FragmentBooksForSuber fragment = new FragmentBooksForSuber();
+        Bundle args = new Bundle();
+
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+
+        }
+    }
+    private SectionedRecyclerViewAdapter sectionAdapter;
+
+    RecyclerView recyclerView;
+    DrawerLayout mDrawerLayout;
+
+    List<BooksForSubersCaps> lstSubCatCabs;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_books_for_suber, container, false);
+
+        lstSubCatCabs = new ArrayList<>();
+        lstSubCatCabs.add(new BooksForSubersCaps("A Taste OF dastiny u search 4","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("The Wild Robot","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("Maria Semples","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("The Martian","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("He Died with...","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("The Vegitarian","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("The Wild Robot","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("Maria Semples","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("The Martian","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("He Died with...","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("The Vegitarian","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("The Wild Robot","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("Maria Semples","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("The Martian","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+        lstSubCatCabs.add(new BooksForSubersCaps("He Died with...","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
+
+        RecyclerView myrv = (RecyclerView) view.findViewById(R.id.recyclerview_books4subers);
+        BooksForSubersAdapter myAdapter = new BooksForSubersAdapter(this, lstSubCatCabs);
+        myrv.setLayoutManager(new GridLayoutManager(getContext(),3));
+        myrv.setAdapter(myAdapter);
+
+
+
+        mDrawerLayout = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
+        Button button = view.findViewById(R.id.b4);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                ((Main2Activity)getActivity()).openDrawer();
+                mDrawerLayout.openDrawer(Gravity.END);
+
+            }
+        });
+        mDrawerLayout.closeDrawer(GravityCompat.END);
+
+        ImageView back = view.findViewById(R.id.back_img);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = null;
+                Class fragmentClass =  FragmentSubCat.class;
+                try {
+                    fragment = (Fragment) fragmentClass.newInstance();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }// Insert the fragment by replacing any existing fragment
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.frame, fragment).commit();
+            }
+        });
+
+        return view;
+    }
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+
+
+
+}
+
+
+
