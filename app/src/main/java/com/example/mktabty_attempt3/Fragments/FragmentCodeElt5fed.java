@@ -1,9 +1,11 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.mktabty_attempt3.R;
 
@@ -45,40 +48,36 @@ public class FragmentCodeElt5fed extends Fragment {
 
     RecyclerView recyclerView;
     DrawerLayout mDrawerLayout;
-
+    Button cancel,send;
+    TextView label;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_code_elt5fed, container, false);
+        cancel=view.findViewById(R.id.cancel2);
+        send=view.findViewById(R.id.button16);
+        label=view.findViewById(R.id.textView12);
+
+        Typeface face = Typeface.createFromAsset(getActivity().getAssets(),"font1.otf");
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
+        label.setTypeface(face1);
+        send.setTypeface(face);
+        cancel.setTypeface(face);
 
         mDrawerLayout = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
-        Button button = view.findViewById(R.id.b4);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        cancel= view.findViewById(R.id.cancel2);
+        cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ((Main2Activity)getActivity()).openDrawer();
-                mDrawerLayout.openDrawer(Gravity.END);
-
+                FragmentCatsMain newGamefragment = new FragmentCatsMain();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frame, newGamefragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
         mDrawerLayout.closeDrawer(GravityCompat.END);
 
-        ImageView back = view.findViewById(R.id.back_img);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = null;
-                Class fragmentClass =  FragmentSubCat.class;
-                try {
-                    fragment = (Fragment) fragmentClass.newInstance();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }// Insert the fragment by replacing any existing fragment
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.frame, fragment).commit();
-            }
-        });
 
         return view;
     }
