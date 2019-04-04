@@ -1,6 +1,7 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.mktabty_attempt3.R;
 
@@ -45,16 +47,28 @@ public class AuthorInfo extends Fragment {
 
     RecyclerView recyclerView;
     DrawerLayout mDrawerLayout;
+    TextView label,auther_desc,t1,t2,t3,t4;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_author_info, container, false);
         RecyclerView myrv = (RecyclerView) view.findViewById(R.id.recyclerview_subcat);
-
+        Typeface face = Typeface.createFromAsset(getActivity().getAssets(),"font1.otf");
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
+        label = view.findViewById(R.id.textView3);
+        label.setTypeface(face1);
+        auther_desc=view.findViewById(R.id.auther_desc);
+        auther_desc.setTypeface(face);
+        t1=view.findViewById(R.id.textView11);
+        t1.setTypeface(face);
+        t2=view.findViewById(R.id.textView15);
+        t2.setTypeface(face);
+        t3=view.findViewById(R.id.textView17);
+        t3.setTypeface(face);
         mDrawerLayout = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
         Button button = view.findViewById(R.id.b4);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
