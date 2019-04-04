@@ -40,11 +40,11 @@
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/avatar_bg"/>
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="name"
+            android:text="ابو نواف الخليجي"
             android:textColor="@color/labany"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -72,6 +72,7 @@
                 android:scaleType="centerCrop"
                 android:background="@drawable/nav_header_arrow"/>
             <TextView
+                android:id="@+id/follow"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/following"
@@ -94,22 +95,25 @@
             android:layout_gravity="center"
             android:orientation="horizontal"
             android:layout_marginTop="8dp"
+            android:gravity="center"
             android:weightSum="6">
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 android:background="@drawable/share_nav"
                 android:layout_marginRight="5dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/share_frinds_tx_bg"
-                android:layout_weight="5"
-                android:gravity="center"
-                android:text="@string/mosharket"
-                android:textColor="@color/labany"
-                />
+            <!--<TextView-->
+                <!--android:id="@+id/share_with_frinds"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@drawable/share_frinds_tx_bg"-->
+                <!--android:layout_weight="5"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/mosharket"-->
+                <!--android:textColor="@color/labany"-->
+                <!--/>-->
 
         </LinearLayout>
 
