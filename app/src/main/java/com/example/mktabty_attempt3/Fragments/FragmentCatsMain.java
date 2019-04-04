@@ -1,6 +1,7 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,25 +9,19 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.mktabty_attempt3.CatMainAdapter;
+import com.example.mktabty_attempt3.Adapters.CatMainAdapter;
 import com.example.mktabty_attempt3.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
-import io.github.luizgrp.sectionedrecyclerviewadapter.StatelessSection;
 
 
 public class FragmentCatsMain extends Fragment {
@@ -54,6 +49,7 @@ public class FragmentCatsMain extends Fragment {
     private SectionedRecyclerViewAdapter sectionAdapter;
     RecyclerView recyclerView;
     DrawerLayout mDrawerLayout;
+    TextView header;
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
 
@@ -61,7 +57,10 @@ public class FragmentCatsMain extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cats_main, container, false);
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
 
+        header= view.findViewById(R.id.textView3);
+        header.setTypeface(face1);
         Button freebooks= view.findViewById(R.id.button9);
         freebooks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,33 +159,33 @@ public class FragmentCatsMain extends Fragment {
 
     private void initImageBitmaps(){
 //        mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
-        mNames.add("Havasu Falls");
+        mNames.add("Fail");
 
 //        mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
-        mNames.add("Trondheim");
+        mNames.add("is");
 
 //        mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
-        mNames.add("Portugal");
+        mNames.add("inevitable");
 
 //        mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
-        mNames.add("Rocky Mountain National Park");
+        mNames.add("Fail");
 
 
 //        mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
-        mNames.add("Mahahual");
+        mNames.add("Fail");
 
 //        mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
-        mNames.add("Frozen Lake");
+        mNames.add("Fail");
 
 
 //        mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
-        mNames.add("White Sands Desert");
+        mNames.add("Fail");
 
 //        mImageUrls.add("https://i.redd.it/obx4zydshg601.jpg");
-        mNames.add("Austrailia");
+        mNames.add("Fail");
 
 //        mImageUrls.add("https://i.imgur.com/ZcLLrkY.jpg");
-        mNames.add("Washington");
+        mNames.add("is inevitable");
     }
 
     @Override
