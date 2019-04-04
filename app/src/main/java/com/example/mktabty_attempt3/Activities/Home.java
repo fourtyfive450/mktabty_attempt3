@@ -1,6 +1,7 @@
 package com.example.mktabty_attempt3.Activities;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.mktabty_attempt3.BackIDs;
 import com.example.mktabty_attempt3.Fragments.FragmentBooksForFree;
@@ -22,6 +24,8 @@ import com.example.mktabty_attempt3.Fragments.FragmentBooksForSuber;
 import com.example.mktabty_attempt3.Fragments.FragmentCatsMain;
 import com.example.mktabty_attempt3.Fragments.FragmentCodeElt5fed;
 import com.example.mktabty_attempt3.Fragments.FragmentComment;
+import com.example.mktabty_attempt3.Fragments.FragmentFavo;
+import com.example.mktabty_attempt3.Fragments.FragmentProfile;
 import com.example.mktabty_attempt3.Fragments.FragmentProfileSettings;
 import com.example.mktabty_attempt3.Fragments.FragmentSubscribeMF;
 import com.example.mktabty_attempt3.Fragments.Fragment_code_sub;
@@ -31,17 +35,13 @@ public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,blogout;
+    TextView share,follow,name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("Flag","Home b4"+BackIDs.Flag);
-
-        if(BackIDs.Flag==false){
-            Intent i = new Intent(this,MainActivity.class);
-            startActivity(i);
-        }
-        Log.e("Flag","Home After"+BackIDs.Flag);
         setContentView(R.layout.activity_home);
+        Typeface face = Typeface.createFromAsset(getAssets(),"font1.otf");
+        Typeface face1 = Typeface.createFromAsset(getAssets(),"font2.otf");
         b1= findViewById(R.id.b1);
         b2= findViewById(R.id.b2);
         b3= findViewById(R.id.b3);
@@ -52,9 +52,27 @@ public class Home extends AppCompatActivity
         b8= findViewById(R.id.b8);
         b9= findViewById(R.id.b9);
         b10= findViewById(R.id.b10);
+//        share=findViewById(R.id.share_with_frinds);
+        follow=findViewById(R.id.follow);
+        name=findViewById(R.id.name);
+        name.setTypeface(face);
+
+//        share.setTypeface(face);
+        b1.setTypeface(face);
+        b2.setTypeface(face);
+        b3.setTypeface(face);
+        b4.setTypeface(face);
+        b5.setTypeface(face);
+        b6.setTypeface(face);
+        b5.setTypeface(face);
+        b6.setTypeface(face);
+        b7.setTypeface(face);
+        b8.setTypeface(face);
+        b9.setTypeface(face);
+        b10.setTypeface(face);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-Initializing();
+        Initializing();
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -156,11 +174,15 @@ Initializing();
             case R.id.b1:
                 fragmentClass = FragmentCatsMain.class;
                 break;
+            case R.id.b2:
+                fragmentClass = FragmentProfile.class;
+                break;
             case R.id.b3:
-                fragmentClass = FragmentSubscribeMF.class;
+                fragmentClass = FragmentFavo.class;
                 break;
             case R.id.b4:
-                fragmentClass = FragmentComment.class;
+                fragmentClass=FragmentSubscribeMF.class;
+//                fragmentClass = FragmentComment.class;
                 break;
             case R.id.b5:
                 fragmentClass = Fragment_code_sub.class;
