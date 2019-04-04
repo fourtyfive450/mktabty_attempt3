@@ -3,12 +3,10 @@
     android:id="@+id/cardview_id"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    android:layout_width="100dp"
+    android:layout_width="match_parent"
     android:layout_height="200dp"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
-    android:layout_gravity="center"
-
     cardview:cardCornerRadius="4dp">
 
 <LinearLayout
@@ -31,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="70dp"
         android:padding="10dp"
         android:text="TextView placed at the top of the Imageview"
@@ -45,11 +44,13 @@
         android:id="@+id/r1"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageView
-            android:layout_width="20dp"
+            android:layout_width="0dp"
             android:layout_height="20dp"
+            android:layout_weight="1"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
@@ -57,15 +58,17 @@
             android:scaleType="centerInside"
             android:background="@drawable/comments" />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="20dp"
             android:text="44"
+            android:layout_weight="1"
             android:gravity="center"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
-            android:layout_width="20dp"
+            android:layout_width="0dp"
             android:layout_height="20dp"
+            android:layout_weight="1"
             android:scaleType="centerInside"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
@@ -75,15 +78,17 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/ic_favo" />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="35dp"
+            android:layout_weight="1"
             android:text="44"
             android:gravity="center"
             android:layout_gravity="center_vertical"/>
 
         <ImageView
-            android:layout_width="20dp"
+            android:layout_width="0dp"
             android:layout_height="20dp"
+            android:layout_weight="1"
             android:scaleType="centerCrop"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
