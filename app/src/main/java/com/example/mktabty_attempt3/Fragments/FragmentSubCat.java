@@ -1,10 +1,9 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.GridLayoutManager;
@@ -15,10 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.mktabty_attempt3.R;
-import com.example.mktabty_attempt3.SubCatAdapter;
-import com.example.mktabty_attempt3.SubCatCaps;
+import com.example.mktabty_attempt3.Adapters.SubCatAdapter;
+import com.example.mktabty_attempt3.Cabs.SubCatCaps;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,13 +53,17 @@ public class FragmentSubCat extends Fragment {
     RecyclerView recyclerView;
     DrawerLayout mDrawerLayout;
     ImageView BookImage;
+    TextView label;
     List<SubCatCaps> lstSubCatCabs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_book_info, container, false);
+        View view = inflater.inflate(R.layout.fragment_sub_cat, container, false);
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
 
+        label= view.findViewById(R.id.textView3);
+        label.setTypeface(face1);
         mDrawerLayout = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
         Button button = view.findViewById(R.id.b4);
 
