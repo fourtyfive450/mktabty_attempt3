@@ -7,12 +7,15 @@
     android:layout_height="wrap_content"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
+    android:background="@color/trans_white"
     cardview:cardCornerRadius="4dp">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/trans_white"
+        >
 
         <ImageView
             android:id="@+id/book_img_id"
@@ -28,14 +31,17 @@
             android:background="@drawable/authors_main_bg"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Book Title"/>
+            android:layout_height="20dp"
+            android:text="Book Title"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
+            android:background="@color/trans_white"
             android:layout_marginBottom="4dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -49,6 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:numStars="5"
+                    android:background="@color/trans_white"
                     android:foregroundGravity="right"
                     android:isIndicator="false"
                     />
