@@ -1,6 +1,7 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.mktabty_attempt3.Adapters.BooksForSubersAdapter;
 import com.example.mktabty_attempt3.Cabs.BooksForSubersCaps;
@@ -51,14 +53,17 @@ public class FragmentBooksForSuber extends Fragment {
 
     RecyclerView recyclerView;
     DrawerLayout mDrawerLayout;
-
+    TextView header;
     List<BooksForSubersCaps> lstSubCatCabs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_books_for_suber, container, false);
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
 
+        header=view.findViewById(R.id.textView3);
+        header.setTypeface(face1);
         lstSubCatCabs = new ArrayList<>();
         lstSubCatCabs.add(new BooksForSubersCaps("A Taste OF dastiny u search 4","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
         lstSubCatCabs.add(new BooksForSubersCaps("The Wild Robot","Categorie BooksForSubersCaps","Description book",R.drawable.tgouls));
