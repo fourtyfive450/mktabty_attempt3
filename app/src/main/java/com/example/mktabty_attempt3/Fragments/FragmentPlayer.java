@@ -1,6 +1,7 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
@@ -43,7 +44,7 @@ public class FragmentPlayer extends Fragment {
     }
     BottomSheetBehavior bottomSheetBehavior;
     Button open, collapse, hide,zeby;
-    TextView heading;
+    TextView heading,bookname,autherMOM_name;
     ImageView showparts;
 
     //vars
@@ -54,11 +55,17 @@ public class FragmentPlayer extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_player, container, false);
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
+        Typeface face = Typeface.createFromAsset(getActivity().getAssets(),"font1.otf");
         View bottomSheet = view.findViewById(R.id.bottom_sheet);
         heading = (TextView) view.findViewById(R.id.heading);
         showparts = (ImageView) view.findViewById(R.id.showparts);
+        bookname=(TextView) view.findViewById(R.id.textView);
+        bookname.setTypeface(face);
+        autherMOM_name=view.findViewById(R.id.auther_name);
+        autherMOM_name.setTypeface(face);
         showparts.setImageResource(R.drawable.up_arrow);
-
+        heading.setTypeface(face1);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
 
         setup();
