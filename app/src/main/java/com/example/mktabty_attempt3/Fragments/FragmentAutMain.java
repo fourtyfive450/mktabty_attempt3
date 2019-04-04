@@ -1,6 +1,7 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.mktabty_attempt3.Adapters.RecyclerViewAdapter;
 import com.example.mktabty_attempt3.Cabs.Authors;
@@ -44,12 +46,18 @@ public class FragmentAutMain extends Fragment {
     }
     List<Authors> lstBook ;
     DrawerLayout mDrawerLayout;
-
+    Button authers;
+    TextView label;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_aut_main, container, false);
-
+        Typeface face = Typeface.createFromAsset(getActivity().getAssets(),"font1.otf");
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
+        authers= view.findViewById(R.id.button6);
+        label= view.findViewById(R.id.textView3);
+        label.setTypeface(face1);
+        authers.setTypeface(face1);
         lstBook = new ArrayList<>();
         lstBook.add(new Authors("FML","Categorie Book","Description book",R.drawable.mypointofview));
         lstBook.add(new Authors("m7amad m7ros","Categorie Book","Description book",R.drawable.mypointofview));
@@ -85,6 +93,7 @@ public class FragmentAutMain extends Fragment {
             }
         });
         Button cate = view.findViewById(R.id.button5);
+        cate.setTypeface(face);
         cate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
