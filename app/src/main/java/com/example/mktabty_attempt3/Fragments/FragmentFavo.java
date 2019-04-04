@@ -1,6 +1,7 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.mktabty_attempt3.FavoAdapter;
 import com.example.mktabty_attempt3.R;
@@ -49,6 +51,7 @@ public class FragmentFavo extends Fragment {
 
     RecyclerView recyclerView;
     DrawerLayout mDrawerLayout;
+    TextView Title;
     //vars
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
@@ -57,7 +60,9 @@ public class FragmentFavo extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favo, container, false);
-
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
+        Title=view.findViewById(R.id.textView3);
+        Title.setTypeface(face1);
         mDrawerLayout = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
         Button button = view.findViewById(R.id.b4);
 
@@ -111,33 +116,33 @@ public class FragmentFavo extends Fragment {
     private void initImageBitmaps(){
 
         mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
-        mNames.add("Havasu Falls");
+        mNames.add("one");
 
         mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
-        mNames.add("Trondheim");
+        mNames.add("two");
 
         mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
-        mNames.add("Portugal");
+        mNames.add("three");
 
         mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
-        mNames.add("Rocky Mountain National Park");
+        mNames.add("FOUR");
 
 
         mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
-        mNames.add("Mahahual");
+        mNames.add("one");
 
         mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
-        mNames.add("Frozen Lake");
+        mNames.add(" two");
 
 
         mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
-        mNames.add("White Sands Desert");
+        mNames.add("four");
 
         mImageUrls.add("https://i.redd.it/obx4zydshg601.jpg");
-        mNames.add("Austrailia");
+        mNames.add("FOUR");
 
         mImageUrls.add("https://i.imgur.com/ZcLLrkY.jpg");
-        mNames.add("Washington");
+        mNames.add("ottFOUR");
 
 //        initRecyclerView();
     }
