@@ -1,6 +1,7 @@
 package com.example.mktabty_attempt3.Fragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.mktabty_attempt3.R;
 
@@ -47,15 +49,29 @@ public class FragmentBookInfo extends Fragment {
     RecyclerView recyclerView;
     DrawerLayout mDrawerLayout;
     ImageView BookImage;
+    TextView bookDisc,label,t1,t2,t3,t4;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_book_info, container, false);
-
+        Typeface face = Typeface.createFromAsset(getActivity().getAssets(),"font1.otf");
+        Typeface face1 = Typeface.createFromAsset(getActivity().getAssets(),"font2.otf");
+        t1=view.findViewById(R.id.textView4);
+        t2=view.findViewById(R.id.textView6);
+        t3=view.findViewById(R.id.textView7);
+        t4=view.findViewById(R.id.textView8);
+        t1.setTypeface(face);
+        t2.setTypeface(face);
+        t3.setTypeface(face);
+        t4.setTypeface(face);
+        label=view.findViewById(R.id.textView3);
+        label.setTypeface(face1);
+        bookDisc = view.findViewById(R.id.book_disc);
+        bookDisc.setTypeface(face);
         mDrawerLayout = (DrawerLayout)getActivity().findViewById(R.id.drawer_layout);
         Button button = view.findViewById(R.id.b4);
 
-        BookImage = (ImageView) view.findViewById(R.id.imageView10);
+        BookImage = (ImageView) view.findViewById(R.id.imageView120);
         BookImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
