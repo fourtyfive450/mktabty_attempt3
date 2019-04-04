@@ -12,9 +12,9 @@
         android:id="@+id/b4"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:background="@drawable/ic_drawer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +30,7 @@
         android:layout_marginRight="8dp"
         android:background="@drawable/main_label_bg"
         android:gravity="center"
-        android:text="@string/about_book"
+        android:text="@string/about_auther"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,10 +38,10 @@
 
     <ImageView
         android:id="@+id/back_img"
-        android:layout_width="30dp"
+        android:layout_width="35dp"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:background="@drawable/back_arrow"
         app:layout_constraintBottom_toBottomOf="@+id/b4"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,11 +117,11 @@
     <TextView
         android:id="@+id/textView11"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/authors_main_bg"
         android:gravity="center"
-        android:text="TextView"
+        android:text="حاجات"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/imageView17"
         app:layout_constraintStart_toStartOf="@+id/imageView17"
@@ -143,10 +143,10 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:background="@drawable/authors_main_bg"
         android:orientation="horizontal"
         android:weightSum="2"
@@ -159,7 +159,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="TextView"
+            android:text="@string/rate"
             android:textColor="@color/white" />
 
         <TextView
@@ -175,7 +175,7 @@
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -194,7 +194,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="TextView"
+            android:text="@string/review"
             android:textColor="@color/white" />
 
         <TextView
@@ -210,9 +210,9 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/authors_main_bg"
         android:orientation="horizontal"
@@ -226,7 +226,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="TextView"
+            android:text="@string/reader"
             android:textColor="@color/white" />
 
         <TextView
@@ -244,6 +244,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -255,6 +259,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/auther_desc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="انه في يوم الرابع عشر من ازار الموافق الثاني عشر من تشرين الثاني عبرت قواتنا المسلحة في الثالث عشر من حزيران وفي الختام ولا امحمااااا امحرررررروس و اما بعد" />
