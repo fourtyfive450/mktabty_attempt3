@@ -11,7 +11,7 @@
     <string name="title_activity_registration">registration</string>
     <string name="username">اسم المستخدم</string>
     <string name="email2">البريد الألكتروني</string>
-    <string name="password2">كلمة المرور</string>
+    <string name="password2">كلمة السر :</string>
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -78,4 +78,12 @@
     <string name="sub_status">حالة الاشتراك</string>
     <string name="expiration_date">تاريخ الانتهاء</string>
     <string name="no3_elbaqa">نوع الباقة</string>
+    <string name="re_write_pass">اعد كتابة كلمة السر :</string>
+    <string name="about_auther">عن المؤلف</string>
+    <string name="reader">قارئ</string>
+    <string name="review">مراجعة</string>
+    <string name="rate">تقييم</string>
+    <string name="free_books">كتب مجانية</string>
+    <string name="sale_books">كتب للبيع</string>
+    <string name="sub_books">كتب الاشتراك</string>
 </resources>
