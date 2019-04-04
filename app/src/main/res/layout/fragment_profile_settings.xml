@@ -157,6 +157,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="18dp">
                 <TextView
+                    android:id="@+id/pt6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/show_pass"
@@ -173,15 +174,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/black_line"/>
-            
+
             <TextView
+                android:id="@+id/pt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_marginTop="8dp"
                 android:textSize="18sp"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="20dp"
                 android:text="@string/dummy_txt_for_profile_settings"/>
 
             <LinearLayout
@@ -189,8 +193,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="18dp">
+                android:layout_marginRight="18dp"
+                >
                 <TextView
+                    android:id="@+id/pt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cond1"
@@ -209,6 +215,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="18dp">
                 <TextView
+                    android:id="@+id/pt3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cond2"
@@ -227,6 +234,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="18dp">
                 <TextView
+                    android:id="@+id/pt4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cond3"
@@ -245,6 +253,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="18dp">
                 <TextView
+                    android:id="@+id/pt5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cond4"
